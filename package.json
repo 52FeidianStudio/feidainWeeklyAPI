@@ -1,0 +1,21 @@
+{
+  "name": "feidianweeklyapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node app.js",
+    "start": "pm2 start pm2.online.config.js",
+    "stop": "pm2 stop pm2.dev.config.js",
+    "dev": "pm2 start pm2.dev.config.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.4.1",
+    "koa-router": "^7.3.0"
+  },
+  "devDependencies": {
+    "pm2": "^2.9.1"
+  }
+}

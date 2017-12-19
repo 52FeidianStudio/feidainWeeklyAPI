@@ -1,0 +1,13 @@
+{
+    "app_name": "feidianWeekly-api",
+    "app_host": "localhost",
+    "app_port": 8002,
+
+    "db_host": "localhost",
+    "db_port": 3306,
+    "db_name": "feidianweekly",
+    "db_user": "root",
+    "db_password": ""
+
+    
+}
