@@ -282,31 +282,34 @@ LOCK TABLES `weekly_blog` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `weekly_wcontent`
+-- Table structure for table `weekly_wcontent_blog`
 --
 
-DROP TABLE IF EXISTS `weekly_wcontent`;
+DROP TABLE IF EXISTS `weekly_wcontent_blog`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `weekly_wcontent` (
-  `weekly_wcontent_id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'id',
+CREATE TABLE `weekly_wcontent_blog` (
+  `weekly_wcontent_blog_id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `weekly_id` int(10) NOT NULL COMMENT '周刊id',
   `wcontent_id` int(10) NOT NULL COMMENT '目录id',
-  PRIMARY KEY (`weekly_wcontent_id`),
-  KEY `fk_weekly_wcontent_wcontent` (`wcontent_id`),
-  KEY `fk_weekly_wcontent_weekly` (`weekly_id`),
-  CONSTRAINT `fk_weekly_wcontent_wcontent` FOREIGN KEY (`wcontent_id`) REFERENCES `wcontent` (`wcontent_id`),
-  CONSTRAINT `fk_weekly_wcontent_weekly` FOREIGN KEY (`weekly_id`) REFERENCES `weekly` (`weekly_id`)
+  `blog_id` int(10) NOT NULL COMMENT '博客id',
+  PRIMARY KEY (`weekly_wcontent_blog_id`),
+  KEY `fk_weekly_wcontent_blog_wcontent` (`wcontent_id`),
+  KEY `fk_weekly_wcontent_blog_weekly` (`weekly_id`),
+  KEY `fk_weekly_wcontent_blog_blo` (`blog_id`),
+  CONSTRAINT `fk_weekly_wcontent_blog_weekly` FOREIGN KEY (`weekly_id`) REFERENCES `weekly` (`weekly_id`),
+  CONSTRAINT `fk_weekly_wcontent_blog_wcontent` FOREIGN KEY (`wcontent_id`) REFERENCES `wcontent` (`wcontent_id`),
+  CONSTRAINT `fk_weekly_wcontent_blog_blog` FOREIGN KEY (`blog_id`) REFERENCES `blog` (`blog_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `weekly_wcontent`
+-- Dumping data for table `weekly_wcontent_blog`
 --
 
-LOCK TABLES `weekly_wcontent` WRITE;
-/*!40000 ALTER TABLE `weekly_wcontent` DISABLE KEYS */;
-/*!40000 ALTER TABLE `weekly_wcontent` ENABLE KEYS */;
+LOCK TABLES `weekly_wcontent_blog` WRITE;
+/*!40000 ALTER TABLE `weekly_wcontent_blog` DISABLE KEYS */;
+/*!40000 ALTER TABLE `weekly_wcontent_blog` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
